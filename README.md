@@ -38,33 +38,44 @@ distance_cal_cpp/
 
 ## 4. Hướng dẫn cài đặt môi trường (Quan trọng):
 - Do sử dụng Visual Studio 2026 (chưa được CUDA hỗ trợ chính thức), OpenCV cần được build thủ công với các tham số đặc biệt:
-        Source: OpenCV 4.12.0 + Contrib.
-        CMake Configure Flags:
-        WITH_CUDA=ON, WITH_CUDNN=ON, OPENCV_DNN_CUDA=ON
-        CUDA_ARCH_BIN=7.5 (Cho GTX 1650 Ti)
-        BUILD_opencv_world=ON
-        CUDA_NVCC_FLAGS thêm cờ: -allow-unsupported-compiler (Để vượt lỗi check version của VS 2026).
-        Installation Path: ./OpenCV_CUDA/build/install
+```
+Source: OpenCV 4.12.0 + Contrib.
+CMake Configure Flags:
+WITH_CUDA=ON, WITH_CUDNN=ON, OPENCV_DNN_CUDA=ON
+CUDA_ARCH_BIN=7.5 (Cho GTX 1650 Ti)
+BUILD_opencv_world=ON
+CUDA_NVCC_FLAGS thêm cờ: -allow-unsupported-compiler (Để vượt lỗi check version của VS 2026).
+Installation Path: ./OpenCV_CUDA/build/install
+```
 
 ## 5. Hướng dẫn Build & Run:
 - Mở Developer PowerShell for VS 2026 tại thư mục gốc dự án và chạy các lệnh sau:
 
 Bước 1: Cấu hình (Configure)
-        -> cmake -B build -G "Visual Studio 18 2026" -A x64
-        Lưu ý: Nếu CMake không tìm thấy OpenCV, hãy đảm bảo file CMakeLists.txt đã set đường dẫn:
-        set(OpenCV_DIR "D:/OpenCV_CUDA/build/install")
+```
+cmake -B build -G "Visual Studio 18 2026" -A x64
+```
+Lưu ý: Nếu CMake không tìm thấy OpenCV, hãy đảm bảo file CMakeLists.txt đã set đường dẫn:
+set(OpenCV_DIR "D:/OpenCV_CUDA/build/install")
         
 Bước 2: Biên dịch (Build)
-        -> cmake --build build --config Release
-        
+```
+cmake --build build --config Release
+```
+     
 Bước 3: Setup trước khi chạy (Tránh lỗi Crash)
 - Để chương trình chạy được, file .exe cần tìm thấy thư viện động .dll và file config:
+```
 Copy DLL: Copy file opencv_world4120.dll từ D:\OpenCV_CUDA\build\install\bin vào thư mục build\Release.
+
 Config & Model: Đảm bảo file config.json và thư mục weights nằm ở vị trí mà code có thể đọc được (Khuyên dùng đường dẫn tuyệt đối trong code C++ để tránh lỗi File Not Found).
+```
 
 Bước 4: Chạy chương trình
-        -> .\build\Release\build_app.exe
-        
+```
+.\build\Release\build_app.exe
+```
+     
 ## 6. Các lỗi thường gặp (Troubleshooting):
 - Lỗi: Chương trình tắt ngay lập tức (Silent Crash). Nguyên nhân: Thiếu file opencv_world4120.dll cạnh file .exe hoặc chưa add đường dẫn bin vào System PATH. Khắc phục: Copy file .dll vào cùng thư mục với file .exe là nhanh nhất.
 
