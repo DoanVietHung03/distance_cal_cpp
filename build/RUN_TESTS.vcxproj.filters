@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\HProjecT\DHL\distance_cal_cpp\build\CMakeFiles\0085d2c1552d8464cd574fe21aeab81d\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{67A6672A-BB00-3B71-8BAD-6E582078A4A2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
