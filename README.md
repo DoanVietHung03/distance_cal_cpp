@@ -19,18 +19,22 @@
 - OpenCV: v4.12.0 + OpenCV Contrib (Custom Build).
 
 ## 3. Cấu trúc dự án:
+```
 distance_cal_cpp/
 ├── CMakeLists.txt       # Cấu hình build cho dự án
 ├── main.cpp             # Entrypoint (Điểm vào chương trình)
 ├── main.h               # Khai báo chung
-├── config.json          # Cấu hình tham số chạy (quan trọng)
-├── calibration.json     # Thông số camera
-├── height_estimator/    # Mã nguồn mô-đun chính
+├── build                # thư mục chứa các file build từ cmake (QUAN TRỌNG)
+├──config_file
+│   ├── config.json          # Cấu hình tham số chạy (quan trọng)
+│   └── calibration.json     # Thông số camera
+├── height_estimator/        # Mã nguồn mô-đun chính
 │   ├── height_estimator.cpp
 │   └── height_estimator.h
 ├── weights/             # Chứa file model (yolo11n-pose.onnx)
-├── images/              # Chứa ảnh test
+├── vid_test/            # Chứa video test
 └── README.md            # Tài liệu hướng dẫn
+```
 
 ## 4. Hướng dẫn cài đặt môi trường (Quan trọng):
 - Do sử dụng Visual Studio 2026 (chưa được CUDA hỗ trợ chính thức), OpenCV cần được build thủ công với các tham số đặc biệt:
