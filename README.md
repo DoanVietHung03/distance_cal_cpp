@@ -79,4 +79,4 @@ Bước 4: Chạy chương trình
 ## 6. Các lỗi thường gặp (Troubleshooting):
 - Lỗi: Chương trình tắt ngay lập tức (Silent Crash). Nguyên nhân: Thiếu file opencv_world4120.dll cạnh file .exe hoặc chưa add đường dẫn bin vào System PATH. Khắc phục: Copy file .dll vào cùng thư mục với file .exe là nhanh nhất.
 
-Lỗi: Xuất hiện file gcapi.dll, service.conf.lock. Nguyên nhân: NVIDIA Overlay (GeForce Experience) can thiệp vào tiến trình build. Khắc phục: Xóa các file này đi, không ảnh hưởng đến dự án. Tắt Overlay trong setting của NVIDIA nếu muốn.
+- Lỗi: Xuất hiện file gcapi.dll, service.conf.lock. Nguyên nhân: NVIDIA Overlay (GeForce Experience) can thiệp vào tiến trình build. Khắc phục: Xóa các file này đi, không ảnh hưởng đến dự án. Tắt Overlay trong setting của NVIDIA nếu muốn.
